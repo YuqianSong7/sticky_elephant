@@ -48,7 +48,7 @@ module StickyElephant
         end
         password = password_response.bytes[5..-2].map(&:chr).join
         log(msg: "Password: " + password, level: :info)
-        socket.write("R")
+        socket.write("E")
         socket.write(with_length_bytes("\x00\x00\x00\x00"))
         password
       end
